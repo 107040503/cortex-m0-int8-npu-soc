@@ -3,7 +3,7 @@
 Committer：刘马均
 > 面向 CPU + NPU 异构处理器的验证展示项目。
 > 本仓库主要用于作品集、实习/校招网申和项目经历展示。仓库中的 RTL 是用于展示验证流程的
-> 已验证快照，不声明为最新设计分支；项目重点是展示 UVM、DPI-C、AXI 和回归验证能力。
+> 已验证快照，不声明为最新设计分支，最新RTL设计部分位于该仓库main分支；项目重点是展示 UVM、DPI-C、AXI 和回归验证能力。
 
 ## 项目亮点
 
@@ -12,7 +12,7 @@ Committer：刘马均
   `PE_MASK` 输出屏蔽校验。
 - 使用可复用的 AXI memory slave BFM 验证 AXI-Lite 寄存器控制，以及 AXI4 master DMA
   读写访问。
-- 保留原有VS Code + Icarus Verilog回归流程，用于快速RTL smoke test。
+- 保留原有 VS Code + Icarus Verilog 回归流程，用于快速 RTL smoke test。
 - 当前已完成的本地 UVM smoke test 使用 QuestaSim 10.7c 跑通，结果为 `UVM_ERROR : 0`；
   验证平台结构保持 simulator-agnostic，可迁移到 VCS 或 Vivado Simulator/XSIM。
 
