@@ -127,14 +127,12 @@ scoreboard 和 DPI-C golden model 不绑定特定厂商仿真器。
 
 - QuestaSim 10.7c：UVM smoke test 通过，`UVM_ERROR : 0`
 
-面向 ASIC/FPGA 工程复现时，推荐迁移到以下商业仿真器：
+面向 ASIC/FPGA 工程复现时，可迁移到以下商业仿真器：
 
 - Synopsys VCS：适合标准 UVM 回归、DPI-C 联合仿真和覆盖率收集
 - Vivado Simulator / XSIM：适合 Xilinx FPGA RTL smoke test 和 Vivado 工程联动
 - Questa Advanced Simulator：适合已有 Siemens EDA 授权环境下复现
 
-说明：README 中的 QuestaSim 结果表示本项目已完成的本地验证证据；VCS 支持作为工程迁移目标保留，
-不在未实际跑通前声明为已验证结果。
 
 ## 已验证结果
 
@@ -169,10 +167,3 @@ Icarus regression:
 - DPI-C golden model: `uvm_tb/c_model/npu_golden_model.cpp`
 - Run script: `uvm_tb/sim/run.ps1`
 - Verification plan: `docs/uvm_verification_plan.md`
-
-## 给评审/面试官的说明
-
-- 本仓库是验证展示项目，不是最新 RTL 设计分支。
-- 自动生成的仿真输出、波形文件、商业仿真器 work library、数据集以及受许可限制的 Arm
-  官方包均未纳入版本管理。
-- UVM smoke test 不依赖授权版 Cortex-M0 package；完整本地 SoC 回归会依赖该授权包。
