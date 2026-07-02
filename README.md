@@ -1,7 +1,7 @@
-# ARM Cortex-M0 + INT8 NPU低功耗异构处理器设计
+# ARM Cortex-M0 + INT8 NPU Heterogeneous SoC
 Committer：刘马均，UESTC
 
-CPU+自研NPU异构处理器项目。工程实现了
+CPU+自研NPU低功耗异构处理器项目。工程实现了
 Arm Cortex-M0 控制子系统、AHB-Lite 到 AXI-Lite 桥、AXI 共享互连、
 4x4 INT8 脉动阵列 NPU、AXI Burst DMA、低功耗控制与 FPGA 上板验证。
 
