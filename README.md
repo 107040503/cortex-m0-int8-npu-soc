@@ -1,4 +1,4 @@
-# Cortex-M0 + INT8 NPU Heterogeneous SoC
+#ARM Cortex-M0 + INT8 NPU Heterogeneous SoC
 Committer：刘马均，UESTC
 
 CPU+自研NPU异构处理器项目。工程实现了
