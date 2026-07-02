@@ -1,5 +1,5 @@
 # Cortex-M0 + INT8 NPU Heterogeneous SoC
-Committer：刘马均
+Committer：刘马均，UESTC
 
 CPU+自研NPU异构处理器项目。工程实现了
 Arm Cortex-M0 控制子系统、AHB-Lite 到 AXI-Lite 桥、AXI 共享互连、
