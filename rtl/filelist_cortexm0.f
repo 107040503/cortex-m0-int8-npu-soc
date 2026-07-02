@@ -1,0 +1,11 @@
+doc/AT511-r2p0-00rel0-1/AT510-MN-80001-r2p0-00rel0/cores/cortexm0_designstart_r2p0/logical/cortexm0_integration/verilog/cortexm0ds_logic.v
+doc/AT511-r2p0-00rel0-1/AT510-MN-80001-r2p0-00rel0/cores/cortexm0_designstart_r2p0/logical/cortexm0_integration/verilog/CORTEXM0INTEGRATION.v
+rtl/int8_mac_pe.v
+rtl/systolic_array_4x4.v
+rtl/npu_core_4x4.v
+rtl/axi_ram.v
+rtl/npu_accel_axi.v
+rtl/ahb_lite_to_axil_bridge.v
+rtl/cortex_m0_designstart_ahb.v
+rtl/axi_shared_interconnect.v
+rtl/cortex_m0_npu_soc.v

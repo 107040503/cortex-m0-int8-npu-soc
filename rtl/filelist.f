@@ -1,0 +1,10 @@
+rtl/int8_mac_pe.v
+rtl/systolic_array_4x4.v
+rtl/npu_core_4x4.v
+rtl/axi_ram.v
+rtl/npu_accel_axi.v
+rtl/hetero_soc_sim_top.v
+rtl/ahb_lite_to_axil_bridge.v
+rtl/cortex_m0_ahb_stub.v
+rtl/axi_shared_interconnect.v
+rtl/cortex_m0_npu_soc.v

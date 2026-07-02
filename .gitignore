@@ -1,0 +1,44 @@
+# Generated simulation artifacts
+sim/*.vvp
+sim/*.vcd
+sim/*.log
+sim/*.tmp
+sim/*.out
+sim/*.err
+sim/*compile*.tmp
+sim/*run*.tmp
+uvm_tb/sim/build/
+uvm_tb/sim/*.vcd
+uvm_tb/sim/*.wlf
+uvm_tb/sim/*.ucdb
+uvm_tb/sim/transcript
+transcript
+modelsim.ini
+work/
+
+# Licensed/vendor packages and local documents
+doc/AT511-r2p0-00rel0-1/
+doc/AT511-r2p0-00rel0-1.tar.gz
+doc/*.pdf
+
+# Local/private agent config
+.codex/
+.agents/
+
+# Third-party repositories that are not required for the verification showcase
+third_party/
+
+# Local datasets
+data/mnist/*.gz
+
+# Generated or local presentation artifacts
+uvm_tb/docs/*.pptx
+
+# Python/cache/editor noise
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# OS/editor files
+.DS_Store
+Thumbs.db

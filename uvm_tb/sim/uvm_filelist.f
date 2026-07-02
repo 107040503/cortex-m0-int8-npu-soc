@@ -1,0 +1,14 @@
++incdir+uvm_tb/agent
++incdir+uvm_tb/env
++incdir+uvm_tb/seq
++incdir+uvm_tb/tb
++incdir+rtl
+uvm_tb/tb/npu_core_if.sv
+uvm_tb/tb/axil_if.sv
+uvm_tb/tb/axi_if.sv
+uvm_tb/npu_uvm_pkg.sv
+rtl/int8_mac_pe.v
+rtl/systolic_array_4x4.v
+rtl/npu_core_4x4.v
+rtl/npu_accel_axi.v
+uvm_tb/tb/npu_uvm_top.sv
