@@ -16,9 +16,9 @@ Committer：刘马均
 - 当前已完成的本地 UVM smoke test 使用 QuestaSim 10.7c 跑通，结果为 `UVM_ERROR : 0`；
   验证平台结构保持 simulator-agnostic，可迁移到 VCS 或 Vivado Simulator/XSIM。
 
-## 本项目展示的能力
+## 实现结果
 
-本项目重点展示验证架构设计和验证闭环执行能力：
+本项目重点展示验证架构设计和验证闭环执行：
 
 | 方向 | 对应证据 |
 | --- | --- |
