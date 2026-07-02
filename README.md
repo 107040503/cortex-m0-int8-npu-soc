@@ -3,7 +3,7 @@ Committer：刘马均，UESTC
 
 CPU+自研NPU异构处理器项目。工程实现了
 Arm Cortex-M0 控制子系统、AHB-Lite 到 AXI-Lite 桥、AXI 共享互连、
-4x4 INT8 脉动阵列 NPU、AXI Burst DMA、低功耗控制与 FPGA 上板验证脚本。
+4x4 INT8 脉动阵列 NPU、AXI Burst DMA、低功耗控制与 FPGA 上板验证。
 
 > 说明：Arm Cortex-M0 DesignStart 评估包受原厂许可约束，公开仓库不提交
 > `doc/AT511-r2p0-00rel0-1/` 中的官方 RTL。复现实验时请自行获取合法授权包，
