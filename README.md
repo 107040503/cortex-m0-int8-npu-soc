@@ -12,7 +12,7 @@ Committer：刘马均
   `PE_MASK` 输出屏蔽校验。
 - 使用可复用的 AXI memory slave BFM 验证 AXI-Lite 寄存器控制，以及 AXI4 master DMA
   读写访问。
-- 保留原有 VS Code + Icarus Verilog 回归流程，用于快速 RTL smoke test。
+- 保留原有VS Code + Icarus Verilog回归流程，用于快速RTL smoke test。
 - 当前已完成的本地 UVM smoke test 使用 QuestaSim 10.7c 跑通，结果为 `UVM_ERROR : 0`；
   验证平台结构保持 simulator-agnostic，可迁移到 VCS 或 Vivado Simulator/XSIM。
 
