@@ -116,6 +116,8 @@ powershell -ExecutionPolicy Bypass -File scripts\run_all_checks.ps1
 完整 Cortex-M0 测试路径需要本地具备 Arm Cortex-M0 DesignStart evaluation package。
 该授权包受许可限制，不包含在公开展示仓库中。
 
+ARM Cortex-M0 RTL源码下载地址：https://www.arm.com/resources/free-evaluation-arm-cpus
+
 ## 商业仿真器支持
 
 本项目的 UVM 验证平台采用 simulator-agnostic 结构设计，核心 testbench、agent、sequence、
