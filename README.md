@@ -1,91 +1,87 @@
-# CPU + NPU Heterogeneous Processor Verification Showcase
+# CPU + NPU 异构处理器验证展示项目
 
-> Verification-focused project for a CPU + NPU heterogeneous processor.
-> This repository is intended for portfolio / application review. The RTL here
-> is the verified snapshot used to demonstrate the verification flow; it is not
-> claimed to be the newest design branch.
+> 面向 CPU + NPU 异构处理器的验证展示项目。
+> 本仓库主要用于作品集、实习/校招网申和项目经历展示。仓库中的 RTL 是用于展示验证流程的
+> 已验证快照，不声明为最新设计分支；项目重点是展示 UVM、DPI-C、AXI 和回归验证能力。
 
-## Highlights
+## 项目亮点
 
-- Built a block-level UVM verification environment for `npu_core_4x4` and
-  `npu_accel_axi`.
-- Integrated a DPI-C C++ golden model for signed INT8 4x4 matrix multiplication
-  with INT32 accumulation and runtime `PE_MASK` output masking.
-- Verified AXI-Lite register control plus AXI4 master DMA read/write traffic
-  with a reusable AXI memory slave BFM.
-- Preserved the original VS Code + Icarus Verilog regression flow for fast RTL
-  smoke testing.
-- Ran the final UVM smoke test on QuestaSim 10.7c with `UVM_ERROR : 0`.
+- 针对 `npu_core_4x4` 和 `npu_accel_axi` 搭建了模块级 UVM 验证环境。
+- 集成 DPI-C C++ golden model，用于 signed INT8 4x4 矩阵乘法、INT32 累加和运行时
+  `PE_MASK` 输出屏蔽校验。
+- 使用可复用的 AXI memory slave BFM 验证 AXI-Lite 寄存器控制，以及 AXI4 master DMA
+  读写访问。
+- 保留原有 VS Code + Icarus Verilog 回归流程，用于快速 RTL smoke test。
+- 最终 UVM smoke test 已在 QuestaSim 10.7c 上跑通，结果为 `UVM_ERROR : 0`。
 
-## What This Project Demonstrates
+## 本项目展示的能力
 
-This project focuses on verification architecture and execution:
+本项目重点展示验证架构设计和验证闭环执行能力：
 
-| Area | Evidence |
+| 方向 | 对应证据 |
 | --- | --- |
-| UVM architecture | `uvm_tb/` environment, agents, sequences, scoreboard |
-| DPI-C co-simulation | `uvm_tb/c_model/npu_golden_model.cpp` |
-| AXI verification | AXI-Lite config agent and AXI memory slave BFM |
-| Algorithm checking | Scoreboard compares RTL output against C++ golden model |
-| Regression automation | `uvm_tb/sim/run.ps1`, `scripts/run_all_checks.ps1` |
-| Reports | `docs/uvm_verification_plan.md`, `docs/simulation_report.md`, `docs/metrics_report.md` |
+| UVM 验证架构 | `uvm_tb/` 中的 env、agent、sequence、scoreboard |
+| DPI-C 联合仿真 | `uvm_tb/c_model/npu_golden_model.cpp` |
+| AXI 协议验证 | AXI-Lite config agent 和 AXI memory slave BFM |
+| 算法级比对 | Scoreboard 将 RTL 输出与 C++ golden model 结果进行比对 |
+| 自动化回归 | `uvm_tb/sim/run.ps1`、`scripts/run_all_checks.ps1` |
+| 验证文档 | `docs/uvm_verification_plan.md`、`docs/simulation_report.md`、`docs/metrics_report.md` |
 
-## Architecture Under Test
+## 被测架构
 
 ```text
-CPU / AXI-Lite Control
+CPU / AXI-Lite 控制
         |
         v
  npu_accel_axi
    |        |
-   |        +-- AXI4 master DMA reads A/B matrices and writes C matrix
+   |        +-- AXI4 master DMA 读取 A/B 矩阵并写回 C 矩阵
    v
  npu_core_4x4
    |
-   +-- 4x4 signed INT8 systolic array, INT32 accumulation
+   +-- 4x4 signed INT8 systolic array，INT32 累加
 ```
 
-The UVM platform verifies two layers:
+UVM 平台覆盖两个验证层级：
 
-1. **Core direct verification**: drives `start`, `a_matrix`, `b_matrix`,
-   `pe_mask`, and `dfs_divider` directly into `npu_core_4x4`.
-2. **Accelerator verification**: configures `npu_accel_axi` through AXI-Lite,
-   serves A/B matrix data through an AXI memory BFM, captures C writeback, and
-   checks the result with the same DPI-C golden model.
+1. **Core direct verification**：直接驱动 `start`、`a_matrix`、`b_matrix`、
+   `pe_mask` 和 `dfs_divider`，对 `npu_core_4x4` 进行矩阵计算功能验证。
+2. **Accelerator verification**：通过 AXI-Lite 配置 `npu_accel_axi`，由 AXI memory BFM
+   提供 A/B 矩阵数据，捕获 C 矩阵写回结果，并复用同一套 DPI-C golden model 进行比对。
 
-## Repository Layout
+## 仓库结构
 
 ```text
-rtl/                 RTL snapshot used by the verification showcase
-tb/                  Lightweight self-checking Verilog testbenches
+rtl/                 用于验证展示的 RTL 快照
+tb/                  轻量级自检查 Verilog testbench
 uvm_tb/
-  agent/             UVM core, AXI-Lite, and AXI memory agents
-  env/               Environment, scoreboard, tests
-  seq/               Core corner sequences and accelerator sequences
-  c_model/           DPI-C C++ golden model and self-test
-  sim/               Questa/Icarus run script and UVM filelist
-docs/                Verification plan, simulation report, metrics
-scripts/             Icarus regression and report generation scripts
-submission/          Competition-style design/RTL/simulation documents
+  agent/             UVM core、AXI-Lite 和 AXI memory agent
+  env/               Environment、scoreboard、test
+  seq/               Core corner sequence 和 accelerator sequence
+  c_model/           DPI-C C++ golden model 与自测试
+  sim/               Questa/Icarus 运行脚本和 UVM filelist
+docs/                验证计划、仿真报告和指标报告
+scripts/             Icarus 回归与报告生成脚本
+submission/          比赛/评审风格的设计、RTL 和仿真说明文档
 ```
 
-## Quick Start
+## 快速开始
 
-### 1. Run Questa UVM Smoke Test
+### 1. 运行 Questa UVM Smoke Test
 
-Default Questa path used by the script:
+脚本默认使用的 Questa 路径：
 
 ```text
 E:\Application\questasim64_10.7c
 ```
 
-Command:
+运行命令：
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File uvm_tb\sim\run.ps1 -Mode questa -Test npu_smoke_test
 ```
 
-Expected key result:
+预期关键结果：
 
 ```text
 [CORE_PASS] 7
@@ -93,35 +89,34 @@ Expected key result:
 UVM_ERROR : 0
 ```
 
-### 2. Run Open-Source Smoke Test
+### 2. 运行 Open-Source Smoke Test
 
-Requires Icarus Verilog and MinGW `g++`:
+需要安装 Icarus Verilog 和 MinGW `g++`：
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File uvm_tb\sim\run.ps1 -Mode smoke
 ```
 
-This runs:
+该命令会依次运行：
 
-- C++ golden model self-test
+- C++ golden model 自测试
 - `tb_npu_core_4x4`
 - `tb_axi_burst_dma`
 - `tb_hetero_soc`
 - `tb_npu_stress`
 
-### 3. Run Full Local Regression
+### 3. 运行完整本地回归
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts\run_all_checks.ps1
 ```
 
-The full Cortex-M0 test path requires a local Arm Cortex-M0 DesignStart
-evaluation package. That licensed package is intentionally not part of the
-public showcase repository.
+完整 Cortex-M0 测试路径需要本地具备 Arm Cortex-M0 DesignStart evaluation package。
+该授权包受许可限制，不包含在公开展示仓库中。
 
-## Verified Results
+## 已验证结果
 
-Last local validation:
+最近一次本地验证结果：
 
 ```text
 Questa UVM:
@@ -142,7 +137,7 @@ Icarus regression:
   MNIST INT8 accuracy: 82.01%
 ```
 
-## Key Verification Files
+## 关键验证文件
 
 - UVM top: `uvm_tb/tb/npu_uvm_top.sv`
 - UVM package: `uvm_tb/npu_uvm_pkg.sv`
@@ -153,10 +148,9 @@ Icarus regression:
 - Run script: `uvm_tb/sim/run.ps1`
 - Verification plan: `docs/uvm_verification_plan.md`
 
-## Notes For Reviewers
+## 给评审/面试官的说明
 
-- The repository is a verification showcase, not the newest RTL design branch.
-- Generated simulation outputs, waveform files, Questa work libraries, datasets,
-  and licensed Arm package files are excluded from version control.
-- The UVM smoke test does not depend on the licensed Cortex-M0 package; the full
-  local SoC regression does.
+- 本仓库是验证展示项目，不是最新 RTL 设计分支。
+- 自动生成的仿真输出、波形文件、Questa work library、数据集以及受许可限制的 Arm
+  官方包均未纳入版本管理。
+- UVM smoke test 不依赖授权版 Cortex-M0 package；完整本地 SoC 回归会依赖该授权包。
