@@ -9,8 +9,7 @@ Arm Cortex-M0 控制子系统、AHB-Lite 到 AXI-Lite 桥、AXI 共享互连、
 > `doc/AT511-r2p0-00rel0-1/` 中的官方 RTL。复现实验时请自行获取合法授权包，
 > 并按 `rtl/filelist_cortexm0.f` 中的路径放置。
 >
-> ARM Cortex-M0 RTL源码下载地址：
-  https://www.arm.com/resources/free-evaluation-arm-cpus
+> ARM Cortex-M0 RTL源码下载地址：https://www.arm.com/resources/free-evaluation-arm-cpus
 
 ## Project Highlights
 
