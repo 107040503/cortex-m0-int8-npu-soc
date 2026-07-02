@@ -1,0 +1,65 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Wed Jul  1 02:20:51 2026
+| Host         : admin running 64-bit major release  (build 9200)
+| Command      : report_design_analysis -timing -logic_level_distribution -file D:/Documents/Program/IC/fpga/vivado/reports/impl_design_analysis_timing.rpt
+| Design       : fpga_kc705_top
+| Device       : xc7k325t
+| Design State : Physopt postRoute
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Design Analysis
+
+Table of Contents
+-----------------
+1. Setup Path Characteristics 1-1
+2. Logic Level Distribution
+
+1. Setup Path Characteristics 1-1
+---------------------------------
+
++---------------------------+--------------------------------------------------------------------------------------+
+|      Characteristics      |                                        Path #1                                       |
++---------------------------+--------------------------------------------------------------------------------------+
+| Requirement               |                                                                                5.000 |
+| Path Delay                |                                                                                8.966 |
+| Logic Delay               | 5.069(57%)                                                                           |
+| Net Delay                 | 3.897(43%)                                                                           |
+| Clock Skew                |                                                                                0.000 |
+| Slack                     |                                                                               -3.992 |
+| Clock Relationship        | Safely Timed                                                                         |
+| Logic Levels              |                                                                                   13 |
+| Routes                    |                                                                                    0 |
+| Logical Path              | FDCE LUT6 LUT6 LUT2 DSP48E1 DSP48E1 LUT2 CARRY4 CARRY4 LUT6 LUT6 LUT6 LUT6 LUT6 FDCE |
+| Start Point Clock         | soc_clk_mmcm                                                                         |
+| End Point Clock           | soc_clk_mmcm                                                                         |
+| DSP Block                 | Comb                                                                                 |
+| BRAM                      | None                                                                                 |
+| IO Crossings              |                                                                                    0 |
+| Config Crossings          |                                                                                    0 |
+| SLR Crossings             |                                                                                    0 |
+| PBlocks                   |                                                                                    1 |
+| High Fanout               |                                                                                   97 |
+| Dont Touch                |                                                                                    0 |
+| Mark Debug                |                                                                                    0 |
+| Start Point Pin Primitive | FDCE/C                                                                               |
+| End Point Pin Primitive   | FDCE/D                                                                               |
+| Start Point Pin           | Ydopw6_reg/C                                                                         |
+| End Point Pin             | Ydopw6_reg/D                                                                         |
++---------------------------+--------------------------------------------------------------------------------------+
+* Bounding box calculated as % of dimensions for the target device (396, 700)
+
+
+2. Logic Level Distribution
+---------------------------
+
++-----------------+-------------+----+-----+----+----+----+----+----+----+----+-----+----+----+
+| End Point Clock | Requirement |  7 |  8  | 10 | 11 | 12 | 13 | 14 | 15 | 16 |  17 | 18 | 21 |
++-----------------+-------------+----+-----+----+----+----+----+----+----+----+-----+----+----+
+| soc_clk_mmcm    | 5.000ns     | 81 | 124 | 66 | 52 | 99 | 72 | 72 | 24 | 26 | 377 |  2 |  5 |
++-----------------+-------------+----+-----+----+----+----+----+----+----+----+-----+----+----+
+* Columns represent the logic levels per end point clock
+** Distribution is for top worst 1000 paths
+
+

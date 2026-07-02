@@ -1,0 +1,51 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Wed Jul  1 02:21:03 2026
+| Host         : admin running 64-bit major release  (build 9200)
+| Command      : report_qor_suggestions -file D:/Documents/Program/IC/fpga/vivado/reports/impl_qor_suggestions.rpt
+| Design       : fpga_kc705_top
+| Device       : xc7k325t
+| Design State : Physopt postRoute
+---------------------------------------------------------------------------------------------------------------------------
+
+Report QoR Suggestions
+
+Table of Contents
+-----------------
+1. QoR Suggestions Report Summary
+2. ML Strategies
+3. QoR Suggestions - XDC
+
+1. QoR Suggestions Report Summary
+---------------------------------
+
++-------------+-----------+-----------+--------------+---------------+-----------+------------------------------------------------------------------------------------------+-------------+
+|     Name    |     Id    |   Status  | Generated At | Applicable At | Automatic |                                        Description                                       |    Source   |
++-------------+-----------+-----------+--------------+---------------+-----------+------------------------------------------------------------------------------------------+-------------+
+| RQS_XDC-1-1 | RQS_XDC-1 | Generated | phys_opt     | synth_design  | No        | Tight Constraints for given paths. Review critical paths with difficult requirements and | Current Run |
+|             |           |           |              |               |           | either reduce logic delays or increase path requirements.                                |             |
++-------------+-----------+-----------+--------------+---------------+-----------+------------------------------------------------------------------------------------------+-------------+
+* No Issues Found
+** By default the number of failing paths is limited to 100. Use the -max_paths options to override.
+
+
+2. ML Strategies
+----------------
+
++---+----+---------+---------+
+| # | Id | Command | Options |
++---+----+---------+---------+
+* The design is not compatible for suggesting strategy, as it was not run using vivado implementation default or vivado implementation explore strategy.
+
+
+3. QoR Suggestions - XDC
+------------------------
+
++-------------+-------------+--------------+--------+--------+-------+-------+----------------+-------+--------+--------------+-------------------+--------------------------------------------------------+--------------------------------------------------------+
+|     Name    | No of Paths | Logic Levels | Routes |  Slack |  Req. |  Skew | Datapath Delay | Cell% | Route% | Source Clock | Destination Clock |                       Startpoint                       |                        Endpoint                        |
++-------------+-------------+--------------+--------+--------+-------+-------+----------------+-------+--------+--------------+-------------------+--------------------------------------------------------+--------------------------------------------------------+
+| RQS_XDC-1-1 | 200         | 13           | 13     | -3.992 | 5.000 | 0.000 | 8.966          | 56.50 | 43.50  | soc_clk_mmcm | soc_clk_mmcm      | u_soc/u_cpu/u_cortexm0integration/u_logic/Ydopw6_reg/C | u_soc/u_cpu/u_cortexm0integration/u_logic/Ydopw6_reg/D |
++-------------+-------------+--------------+--------+--------+-------+-------+----------------+-------+--------+--------------+-------------------+--------------------------------------------------------+--------------------------------------------------------+
+
+

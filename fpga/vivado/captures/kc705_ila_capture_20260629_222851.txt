@@ -1,0 +1,15 @@
+Configuring ILA: hw_ila_1
+  probe: cpu_halted width=unknown
+  probe: cycle_counter width=unknown
+  probe: debug_resetn width=unknown
+  probe: dma_active_cycles width=unknown
+  probe: dma_data_cycles width=unknown
+  probe: dma_read_beats width=unknown
+  probe: dma_write_beats width=unknown
+  probe: npu_array_clk_en width=unknown
+  probe: npu_irq width=unknown
+  probe: npu_irq_latched width=unknown
+  probe: ram_read_beats width=unknown
+  probe: ram_write_beats width=unknown
+Trigger: debug_resetn == 1
+CSV: D:/Documents/Program/IC/fpga/vivado/captures/20260629_222851_hw_ila_1.csv

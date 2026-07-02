@@ -1,0 +1,16 @@
+Vivado version: 2019.2
+Command:
+  E:\Application\Xilinx\Vivado\2019.2\bin\vivado.bat -mode batch -source fpga\vivado\tcl\list_hw_targets.tcl
+
+Result:
+  hw_server: localhost:3121
+  target: localhost:3121/xilinx_tcf/Digilent/210203991573A
+  device: xc7k325t_0
+  part: xc7k325t
+  idcode: 01000011011001010001000010010011
+  PROGRAM.FILE: empty during read-only enumeration
+  PROBES.FILE: empty during read-only enumeration
+
+Boundary:
+  This proves the KC705 JTAG chain is visible to Vivado Hardware Manager.
+  It is not a program result and not an ILA capture result.

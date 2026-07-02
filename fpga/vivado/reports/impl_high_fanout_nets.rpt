@@ -1,0 +1,71 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Wed Jul  1 02:21:04 2026
+| Host         : admin running 64-bit major release  (build 9200)
+| Command      : report_high_fanout_nets -max_nets 50 -file D:/Documents/Program/IC/fpga/vivado/reports/impl_high_fanout_nets.rpt
+| Design       : fpga_kc705_top
+| Device       : xc7k325t
+----------------------------------------------------------------------------------------------------------------------------------
+
+High Fan-out Nets Information
+
+1. Summary
+----------
+
++-----------------------------------------------------------------------------------------+--------+-------------+
+| Net Name                                                                                | Fanout | Driver Type |
++-----------------------------------------------------------------------------------------+--------+-------------+
+| u_soc/u_cpu/u_cortexm0integration/start_delay_counter_reg[28]                           |   2755 | LUT1        |
+| u_soc/u_npu/u_core/done_i_1_n_0                                                         |    513 | LUT2        |
+| u_soc/u_npu/u_core/u_array/gen_rows[0].gen_cols[2].u_pe/E[0]                            |    464 | LUT4        |
+| u_ila_cpu_npu/inst/ila_core_inst/use_probe_debug_circuit                                |    229 | FDRE        |
+| u_ila_cpu_npu/inst/ila_core_inst/u_ila_regs/U_XSDB_SLAVE/s_daddr_o[0]                   |    191 | FDRE        |
+| u_ila_cpu_npu/inst/ila_core_inst/u_ila_regs/U_XSDB_SLAVE/s_daddr_o[1]                   |    189 | FDRE        |
+| u_soc/u_cpu/u_cortexm0integration/u_logic/Hirpw6                                        |    188 | FDCE        |
+| u_soc/u_cpu/u_cortexm0integration/u_logic/Ufopw6                                        |    182 | FDCE        |
+| u_soc/u_npu/u_core/p_0_in[3]                                                            |    182 | FDCE        |
+| u_soc/u_cpu/u_cortexm0integration/u_logic/Iixpw6                                        |    178 | FDRE        |
+| u_soc/u_cpu/u_cortexm0integration/u_logic/Vzupw6                                        |    178 | FDCE        |
+| u_soc/u_cpu/u_cortexm0integration/u_logic/Htmpw6                                        |    177 | FDRE        |
+| u_soc/u_cpu/u_cortexm0integration/u_logic/Vhspw6                                        |    177 | FDRE        |
+| u_soc/u_cpu/u_cortexm0integration/u_logic/Vmipw6                                        |    177 | FDRE        |
+| u_soc/u_cpu/u_cortexm0integration/u_logic/Shopw6                                        |    174 | FDRE        |
+| u_soc/u_cpu/u_cortexm0integration/u_logic/Wxjpw6                                        |    174 | FDRE        |
+| dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg[0] |    162 | FDRE        |
+| u_soc/u_cpu/u_cortexm0integration/u_logic/Aujpw6                                        |    158 | FDCE        |
+| u_soc/u_cpu/u_cortexm0integration/u_logic/Xxupw6                                        |    157 | FDCE        |
+| u_soc/u_npu/u_core/p_0_in[0]                                                            |    157 | FDCE        |
+| u_soc/u_cpu/u_cortexm0integration/u_logic/T1vpw6                                        |    156 | FDCE        |
+| u_soc/u_npu/state_reg_n_0_[1]                                                           |    141 | FDCE        |
+| u_soc/u_npu/u_core/cycle_count_reg[2]_rep_n_0                                           |    140 | FDCE        |
+| u_soc/u_npu/read_idx_reg_n_0_[0]                                                        |    139 | FDCE        |
+| u_soc/u_npu/read_idx_reg_n_0_[2]                                                        |    139 | FDCE        |
+| u_soc/u_npu/read_idx_reg_n_0_[1]                                                        |    138 | FDCE        |
+| u_soc/u_npu/state_reg_n_0_[3]                                                           |    137 | FDCE        |
+| u_soc/u_npu/write_idx_reg_n_0_[0]                                                       |    136 | FDCE        |
+| u_soc/u_npu/write_idx_reg_n_0_[1]                                                       |    135 | FDCE        |
+| u_soc/u_npu/Q[0]                                                                        |    133 | FDCE        |
+| u_soc/u_npu/state_reg_n_0_[2]                                                           |    132 | FDCE        |
+| u_soc/u_npu/u_core/u_array/gen_rows[0].gen_cols[1].u_pe/product_valid_q_reg_0           |    128 | LUT3        |
+| u_soc/u_npu/u_core/u_array/gen_rows[0].gen_cols[2].u_pe/product_valid_q_reg_0           |    128 | LUT3        |
+| u_soc/u_npu/u_core/u_array/gen_rows[0].gen_cols[3].u_pe/product_valid_q_reg_0           |    128 | LUT3        |
+| u_soc/u_npu/u_core/u_array/gen_rows[1].gen_cols[0].u_pe/product_valid_q_reg_0           |    128 | LUT3        |
+| u_soc/u_npu/u_core/array_clear_reg_n_0                                                  |    118 | FDCE        |
+| u_soc/u_cpu/u_cortexm0integration/u_logic/Bciax6                                        |    115 | FDCE        |
+| u_soc/u_ahb_to_axil/m_axil_araddr_reg[13]_0[1]                                          |    107 | FDCE        |
+| u_soc/u_cpu/u_cortexm0integration/u_logic/Yvjpw6                                        |    107 | FDCE        |
+| u_soc/u_ahb_to_axil/m_axil_araddr_reg[13]_0[0]                                          |    106 | FDCE        |
+| u_soc/u_npu/u_core/array_clear_reg_rep__0_n_0                                           |    106 | FDCE        |
+| u_soc/u_npu/u_core/array_clear_reg_rep__1_n_0                                           |    106 | FDCE        |
+| u_soc/u_npu/u_core/array_clear_reg_rep__2_n_0                                           |    106 | FDCE        |
+| u_soc/u_npu/u_core/array_clear_reg_rep__3_n_0                                           |    106 | FDCE        |
+| u_soc/u_npu/u_core/array_clear_reg_rep__4_n_0                                           |    106 | FDCE        |
+| u_soc/u_npu/u_core/array_clear_reg_rep__5_n_0                                           |    106 | FDCE        |
+| u_soc/u_npu/u_core/array_clear_reg_rep__6_n_0                                           |    106 | FDCE        |
+| u_soc/u_npu/u_core/array_clear_reg_rep__7_n_0                                           |    106 | FDCE        |
+| u_soc/u_npu/u_core/array_clear_reg_rep__8_n_0                                           |    106 | FDCE        |
+| u_soc/u_npu/u_core/array_clear_reg_rep__9_n_0                                           |    106 | FDCE        |
++-----------------------------------------------------------------------------------------+--------+-------------+
+
+

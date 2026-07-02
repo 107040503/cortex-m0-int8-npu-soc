@@ -1,0 +1,43 @@
+# Licensed vendor packages
+doc/AT511-r2p0-00rel0-1/
+doc/AT511-r2p0-00rel0-1.tar.gz
+doc/*.pdf
+
+# Optional third-party checkout kept locally as a reference path
+third_party/picorv32/
+
+# Downloaded datasets
+data/mnist/*.gz
+
+# Simulation outputs
+sim/*.vcd
+sim/*.vvp
+sim/*.log
+sim/*_tmp.*
+
+# Vivado generated files and caches
+.Xil/
+*.jou
+*.log
+*.str
+*.wdb
+*.pb
+*.dcp
+*.rpt~
+*.bit
+*.ltx
+*.runs/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.sim/
+*.srcs/sources_1/ip/
+fpga/vivado/bitstreams/
+fpga/vivado/experiments/
+
+# Local editor and OS noise
+.git/
+.repo-git/
+.vscode/*.log
+Thumbs.db
+Desktop.ini

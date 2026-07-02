@@ -1,0 +1,12 @@
+{
+  "a_base": "0x00000100",
+  "b_base": "0x00000200",
+  "c_base": "0x00000300",
+  "result_base": "0x00000400",
+  "done_sentinel": "0xcafe0001",
+  "c_matrix_int32": [2, 6, 17, 9, -2, 0, 5, 3, 1, -4, 13, -10, 8, -15, 9, 2],
+  "min_peak_mtops": 1000,
+  "expected_dma_read_beats": 8,
+  "expected_dma_write_beats": 16,
+  "min_dma_util_percent": 80
+}

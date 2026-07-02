@@ -1,0 +1,31 @@
+{
+  "reports_dir": "D:\\Documents\\Program\\IC\\fpga\\vivado\\reports",
+  "synth_timing_summary": {
+    "path": "D:\\Documents\\Program\\IC\\fpga\\vivado\\reports\\synth_timing_summary.rpt",
+    "exists": true,
+    "wns": 9.146,
+    "tns": 0
+  },
+  "impl_timing_summary": {
+    "path": "D:\\Documents\\Program\\IC\\fpga\\vivado\\reports\\impl_timing_summary.rpt",
+    "exists": true,
+    "wns": 5.719,
+    "tns": 0
+  },
+  "synth_utilization": {
+    "path": "D:\\Documents\\Program\\IC\\fpga\\vivado\\reports\\synth_utilization.rpt",
+    "exists": true,
+    "slice_lut": 15889,
+    "slice_registers": 5020,
+    "block_ram_tile": 3,
+    "dsp": 3
+  },
+  "impl_utilization": {
+    "path": "D:\\Documents\\Program\\IC\\fpga\\vivado\\reports\\impl_utilization.rpt",
+    "exists": true,
+    "slice_lut": 16026,
+    "slice_registers": 5701,
+    "block_ram_tile": 3,
+    "dsp": 3
+  }
+}

@@ -1,0 +1,9 @@
+third_party/picorv32/picorv32.v
+rtl/int8_mac_pe.v
+rtl/systolic_array_4x4.v
+rtl/npu_core_4x4.v
+rtl/axi_ram.v
+rtl/npu_accel_axi.v
+rtl/hetero_soc_sim_top.v
+rtl/axi_shared_interconnect.v
+rtl/picorv32_npu_soc.v

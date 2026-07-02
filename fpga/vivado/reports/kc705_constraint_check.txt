@@ -1,0 +1,10 @@
+KC705 constraint check
+Generated: Wed Jul 01 01:08:18 +0800 2026
+Opened run: synth_1
+
+pblock_cortex_m0_logic count: 1
+pblock_cortex_m0_logic cell count: 2
+pblock_cortex_m0_logic ranges: DSP48_X2Y12:DSP48_X3Y47 SLICE_X80Y32:SLICE_X119Y127
+matched Cortex-M0 u_logic cell count: 4723
+ILA instance cell count: 4914
+ila_cpu_npu_kc705 IP count: 1

@@ -1,0 +1,54 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Mon Jun 22 08:26:22 2026
+[*]
+[dumpfile] "D:\Documents\Program\IC\sim\tb_cortex_m0_cpu_npu.vcd"
+[dumpfile_mtime] "Mon Jun 22 08:07:44 2026"
+[dumpfile_size] 53621
+[savefile] "C:\Users\liuxiansheng\Desktop\sim.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-18.640869 414000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_cortex_m0_cpu_npu.
+[treeopen] tb_cortex_m0_cpu_npu.dut.
+[sst_width] 197
+[signals_width] 214
+[sst_expanded] 1
+[sst_vpaned_height] 153
+@22
+tb_cortex_m0_cpu_npu.dut.u_cpu.haddr[31:0]
+@c00028
+tb_cortex_m0_cpu_npu.dut.u_cpu.htrans[1:0]
+@28
+(0)tb_cortex_m0_cpu_npu.dut.u_cpu.htrans[1:0]
+(1)tb_cortex_m0_cpu_npu.dut.u_cpu.htrans[1:0]
+@1401200
+-group_end
+@28
+tb_cortex_m0_cpu_npu.dut.u_cpu.hwrite
+@22
+tb_cortex_m0_cpu_npu.dut.u_cpu.hwdata[31:0]
+tb_cortex_m0_cpu_npu.dut.u_cpu.hrdata[31:0]
+@28
+tb_cortex_m0_cpu_npu.dut.u_cpu.hready
+tb_cortex_m0_cpu_npu.dut.u_ahb_to_axil.state[2:0]
+@22
+tb_cortex_m0_cpu_npu.dut.u_ahb_to_axil.m_axil_awaddr[31:0]
+tb_cortex_m0_cpu_npu.dut.u_ahb_to_axil.m_axil_wdata[31:0]
+tb_cortex_m0_cpu_npu.dut.u_ahb_to_axil.m_axil_araddr[31:0]
+tb_cortex_m0_cpu_npu.dut.u_ahb_to_axil.m_axil_rdata[31:0]
+tb_cortex_m0_cpu_npu.dut.u_npu.state[3:0]
+@28
+tb_cortex_m0_cpu_npu.dut.u_npu.done_latched
+@22
+tb_cortex_m0_cpu_npu.dut.u_npu.dma_active_cycles[31:0]
+tb_cortex_m0_cpu_npu.dut.u_npu.dma_data_cycles[31:0]
+tb_cortex_m0_cpu_npu.dut.u_npu.dma_read_beats[31:0]
+tb_cortex_m0_cpu_npu.dut.u_npu.dma_write_beats[31:0]
+@28
+tb_cortex_m0_cpu_npu.npu_irq
+@29
+tb_cortex_m0_cpu_npu.npu_array_clk_en
+[pattern_trace] 1
+[pattern_trace] 0

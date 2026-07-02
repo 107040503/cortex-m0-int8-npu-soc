@@ -1,0 +1,166 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Icarus: run all simulations",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/run_iverilog.ps1",
+        "-Top",
+        "all"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Icarus: run hetero SoC simulation",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/run_iverilog.ps1",
+        "-Top",
+        "tb_hetero_soc"
+      ],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Icarus: check Cortex-M0 SoC compile",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/check_cpu_compile.ps1"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Report: generate metrics report",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/gen_metrics_report.ps1"
+      ],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Project: run all checks and reports",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/run_all_checks.ps1"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Report: run MNIST INT8 accuracy",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/run_python_report.ps1",
+        "-Script",
+        "scripts/mnist_int8_eval.py"
+      ],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Report: check coverage tools",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/check_coverage_tools.ps1"
+      ],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "VC707: check Vivado/MATLAB environment",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/check_vc707_env.ps1"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "VC707: Vivado setup project",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/run_vivado_vc707.ps1",
+        "-Action",
+        "setup"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "VC707: Vivado synth",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/run_vivado_vc707.ps1",
+        "-Action",
+        "synth"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "VC707: Vivado impl bitstream",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/run_vivado_vc707.ps1",
+        "-Action",
+        "impl"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}

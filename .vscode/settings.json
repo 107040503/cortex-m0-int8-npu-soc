@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.v": "verilog",
+    "*.sv": "systemverilog"
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell"
+}
