@@ -14,7 +14,7 @@ Committer：刘马均
   读写访问。
 - 保留原有 VS Code + Icarus Verilog 回归流程，用于快速 RTL smoke test。
 - 当前已完成的本地 UVM smoke test 使用 QuestaSim 10.7c 跑通，结果为 `UVM_ERROR : 0`；
-  验证平台结构保持 simulator-agnostic，后续可迁移到 VCS 或 Vivado Simulator/XSIM。
+  验证平台结构保持 simulator-agnostic，可迁移到 VCS 或 Vivado Simulator/XSIM。
 
 ## 本项目展示的能力
 
