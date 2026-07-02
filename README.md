@@ -12,7 +12,8 @@
 - 使用可复用的 AXI memory slave BFM 验证 AXI-Lite 寄存器控制，以及 AXI4 master DMA
   读写访问。
 - 保留原有 VS Code + Icarus Verilog 回归流程，用于快速 RTL smoke test。
-- 最终 UVM smoke test 已在 QuestaSim 10.7c 上跑通，结果为 `UVM_ERROR : 0`。
+- 当前已完成的本地 UVM smoke test 使用 QuestaSim 10.7c 跑通，结果为 `UVM_ERROR : 0`；
+  验证平台结构保持 simulator-agnostic，后续可迁移到 VCS 或 Vivado Simulator/XSIM。
 
 ## 本项目展示的能力
 
@@ -59,7 +60,7 @@ uvm_tb/
   env/               Environment、scoreboard、test
   seq/               Core corner sequence 和 accelerator sequence
   c_model/           DPI-C C++ golden model 与自测试
-  sim/               Questa/Icarus 运行脚本和 UVM filelist
+  sim/               Questa/Icarus 运行脚本和可迁移的 UVM filelist
 docs/                验证计划、仿真报告和指标报告
 scripts/             Icarus 回归与报告生成脚本
 submission/          比赛/评审风格的设计、RTL 和仿真说明文档
@@ -67,7 +68,7 @@ submission/          比赛/评审风格的设计、RTL 和仿真说明文档
 
 ## 快速开始
 
-### 1. 运行 Questa UVM Smoke Test
+### 1. 运行当前已验证的 Questa UVM Smoke Test
 
 脚本默认使用的 Questa 路径：
 
@@ -114,12 +115,30 @@ powershell -ExecutionPolicy Bypass -File scripts\run_all_checks.ps1
 完整 Cortex-M0 测试路径需要本地具备 Arm Cortex-M0 DesignStart evaluation package。
 该授权包受许可限制，不包含在公开展示仓库中。
 
+## 商业仿真器支持
+
+本项目的 UVM 验证平台采用 simulator-agnostic 结构设计，核心 testbench、agent、sequence、
+scoreboard 和 DPI-C golden model 不绑定特定厂商仿真器。
+
+当前已在本地完成验证的环境：
+
+- QuestaSim 10.7c：UVM smoke test 通过，`UVM_ERROR : 0`
+
+面向 ASIC/FPGA 工程复现时，推荐迁移到以下商业仿真器：
+
+- Synopsys VCS：适合标准 UVM 回归、DPI-C 联合仿真和覆盖率收集
+- Vivado Simulator / XSIM：适合 Xilinx FPGA RTL smoke test 和 Vivado 工程联动
+- Questa Advanced Simulator：适合已有 Siemens EDA 授权环境下复现
+
+说明：README 中的 QuestaSim 结果表示本项目已完成的本地验证证据；VCS 支持作为工程迁移目标保留，
+不在未实际跑通前声明为已验证结果。
+
 ## 已验证结果
 
 最近一次本地验证结果：
 
 ```text
-Questa UVM:
+QuestaSim 10.7c UVM:
   CORE_PASS: 7
   ACCEL_PASS: 1
   UVM_ERROR: 0
@@ -151,6 +170,6 @@ Icarus regression:
 ## 给评审/面试官的说明
 
 - 本仓库是验证展示项目，不是最新 RTL 设计分支。
-- 自动生成的仿真输出、波形文件、Questa work library、数据集以及受许可限制的 Arm
+- 自动生成的仿真输出、波形文件、商业仿真器 work library、数据集以及受许可限制的 Arm
   官方包均未纳入版本管理。
 - UVM smoke test 不依赖授权版 Cortex-M0 package；完整本地 SoC 回归会依赖该授权包。
