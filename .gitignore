@@ -3,8 +3,10 @@ doc/AT511-r2p0-00rel0-1/
 doc/AT511-r2p0-00rel0-1.tar.gz
 doc/*.pdf
 
-# Optional third-party checkout kept locally as a reference path
-third_party/picorv32/
+# PicoRV32 is tracked as a git submodule; ignore only local nested contents
+# when the submodule metadata is not initialized in a fresh checkout.
+third_party/picorv32/*
+!third_party/picorv32/
 
 # Downloaded datasets
 data/mnist/*.gz

@@ -10,16 +10,29 @@ module tb_picorv32_cpu_npu;
     wire trap;
     wire npu_irq;
     wire npu_array_clk_en;
+    wire [31:0] ram_write_beats;
+    wire [31:0] ram_read_beats;
+    wire [31:0] dma_active_cycles;
+    wire [31:0] dma_data_cycles;
+    wire [31:0] dma_read_beats;
+    wire [31:0] dma_write_beats;
 
     integer errors;
     integer timeout_cycles;
+    integer dma_util_percent;
 
     picorv32_npu_soc dut (
-        .clk              (clk),
-        .resetn           (resetn),
-        .trap             (trap),
-        .npu_irq          (npu_irq),
-        .npu_array_clk_en (npu_array_clk_en)
+        .clk               (clk),
+        .resetn            (resetn),
+        .trap              (trap),
+        .npu_irq           (npu_irq),
+        .npu_array_clk_en  (npu_array_clk_en),
+        .ram_write_beats   (ram_write_beats),
+        .ram_read_beats    (ram_read_beats),
+        .dma_active_cycles (dma_active_cycles),
+        .dma_data_cycles   (dma_data_cycles),
+        .dma_read_beats    (dma_read_beats),
+        .dma_write_beats   (dma_write_beats)
     );
 
     always #2.5 clk = ~clk;
@@ -148,11 +161,34 @@ module tb_picorv32_cpu_npu;
             errors = errors + 1;
         end
 
+        if (dma_read_beats != 32'd8) begin
+            $display("FAIL picorv32 dma_read_beats=%0d expected=8", dma_read_beats);
+            errors = errors + 1;
+        end
+        if (dma_write_beats != 32'd16) begin
+            $display("FAIL picorv32 dma_write_beats=%0d expected=16", dma_write_beats);
+            errors = errors + 1;
+        end
+        if (dma_active_cycles == 0) begin
+            $display("FAIL picorv32 dma_active_cycles is zero");
+            errors = errors + 1;
+        end else begin
+            dma_util_percent = (dma_data_cycles * 100) / dma_active_cycles;
+            $display("INFO picorv32 DMA data utilization percent=%0d", dma_util_percent);
+            if (dma_util_percent < 80) begin
+                $display("FAIL picorv32 DMA utilization below 80 percent");
+                errors = errors + 1;
+            end
+        end
+        $display("INFO picorv32 peak mtops=1024");
+
         $display("COVER actual_picorv32_cpu_fetch");
         $display("COVER actual_picorv32_axil_mmio");
         $display("COVER actual_picorv32_cpu_npu_poll");
         $display("COVER actual_picorv32_npu_irq");
         $display("COVER actual_picorv32_zero_copy_addresses");
+        $display("COVER picorv32_peak_over_1tops");
+        $display("COVER picorv32_bus_util_over_80");
         $display("COVER_PATH cpu_fetch_from_shared_sram");
         $display("COVER_PATH cpu_store_npu_mmio_regs");
         $display("COVER_PATH cpu_load_npu_status");

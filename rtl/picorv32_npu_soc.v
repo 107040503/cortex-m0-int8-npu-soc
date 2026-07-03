@@ -115,7 +115,15 @@ module picorv32_npu_soc #(
     wire [31:0] ram_last_araddr;
 
     picorv32_axi #(
+        .ENABLE_COUNTERS(0),
+        .ENABLE_COUNTERS64(0),
+        .TWO_CYCLE_COMPARE(1),
+        .TWO_CYCLE_ALU(1),
+        .ENABLE_MUL(0),
+        .ENABLE_FAST_MUL(0),
+        .ENABLE_DIV(0),
         .ENABLE_IRQ(1),
+        .ENABLE_IRQ_TIMER(0),
         .PROGADDR_RESET(32'h0000_0000),
         .STACKADDR(32'h0000_4000)
     ) u_cpu (
