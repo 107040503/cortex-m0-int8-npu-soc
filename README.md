@@ -5,16 +5,16 @@ Committer：刘马均，UESTC
 Arm Cortex-M0 控制子系统、RISC-V/PicoRV32 控制子系统、AXI 共享互连、
 4x4 INT8 脉动阵列 NPU、AXI Burst DMA、低功耗控制与 KC705 Vivado 验证脚本。
 
-当前推荐展示主线是 **RISC-V/PicoRV32 + NPU**：该路线已在 KC705 Vivado
+1.当前展示实现是 **RISC-V/PicoRV32 + 自研NPU**：该路线已在 KC705 Vivado
 实现中达到真实 `soc_clk_mmcm = 5.000ns / 200.000MHz`，post-route
-`WNS = 0.137ns`，DRC 无 Error，并保留 ILA。ARM/Cortex-M0 路线也已跑通
+`WNS = 0.137ns`，DRC 无 Error，并保留 ILA。
+2.ARM/Cortex-M0 + 自研NPU路线也已跑通
 RTL 回归和真实 KC705 50MHz 上板 ILA 功能验证，但严格单时钟 200MHz
 时序未收敛，原因见下文。
 
 > 说明：Arm Cortex-M0 DesignStart 评估包受原厂许可约束，公开仓库不提交
 > `doc/AT511-r2p0-00rel0-1/` 中的官方 RTL。复现实验时请自行获取合法授权包，
 > 并按 `rtl/filelist_cortexm0.f` 中的路径放置。
->
 > ARM Cortex-M0 RTL源码下载地址：https://www.arm.com/resources/free-evaluation-arm-cpus
 >
 > PicoRV32 使用 ISC License，作为 `third_party/picorv32` git submodule
@@ -75,7 +75,7 @@ Common accelerator path:
 
 ## CPU Route Selection
 
-两条 CPU 路线都跑通了，但最终 200MHz 展示主线选择 RISC-V/PicoRV32：
+两条 CPU 路线都跑通了，但最终 200MHz 展示实现选择 RISC-V/PicoRV32：
 
 | 路线 | 已完成内容 | 不作为/作为 200MHz 主线的原因 |
 | --- | --- | --- |
