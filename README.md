@@ -82,7 +82,7 @@ Common accelerator path:
 | 路线 | 已完成内容 | 不作为/作为 200MHz 主线的原因 |
 | --- | --- | --- |
 | ARM/Cortex-M0 | RTL 回归 PASS；真实 KC705 50MHz program + ILA 捕获 PASS；NPU 指标、DMA 利用率和低功耗观测链路已验证 | 严格单时钟 200MHz 多次 Vivado 实现仍为负 WNS，最坏路径在 Arm DesignStart 混淆核 `CORTEXM0INTEGRATION/u_logic` 内部；当前无法合法插入流水线或设置内部 `SMUL` 等参数，不能用 false path/multicycle 或 50MHz 上板结果满足指标要求 |
-| RISC-V/PicoRV32 | RTL 回归 PASS；PicoRV32 固件通过 AXI/MMIO 配置 NPU；Vivado KC705 200MHz 实现 WNS 为正；ILA `.ltx` 已生成 | PicoRV32 RTL 开源可控，可关闭乘除法/计数器并启用 two-cycle ALU/compare，控制面更轻量，适合作为当前 200MHz时序收敛主线 |
+| RISC-V/PicoRV32 | RTL 回归 PASS；PicoRV32 固件通过 AXI/MMIO 配置 NPU；Vivado KC705 200MHz 实现 WNS 为正；ILA `.ltx` 已生成 | PicoRV32 RTL 开源可控，可关闭乘除法/计数器并启用 two-cycle ALU/compare，控制面更轻量，适合作为当前 200MHz时序收主线 |
 
 ## Repository Layout
 
